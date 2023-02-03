@@ -21,7 +21,7 @@ Bot = Client(name="auto-delete",
 
 START_MSG = "<b>Hai {},\nI'm a private bot of MaSTeR to Accept All users in one time</b>"
 CHAT = "#chatid*
-
+ADMINS = "your id"
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def def start(bot, message):
