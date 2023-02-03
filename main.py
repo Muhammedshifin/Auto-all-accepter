@@ -32,7 +32,9 @@ async def accept(bot, message):
     lol = await message.reply_text(
         text ='Proccesing'
     )
-    await User.approve_all_chat_join_requests(CHAT)
+    chat=message.chat # Chat
+    user=message.from_user # User
+    await User.approve_all_chat_join_requests(chat_id=chat.id, user_id=user.id)
     await lol.edit(f"Completed")
     print("Completed")
     
@@ -44,7 +46,7 @@ Bot.start()
 print("Bot Started!")
 
 idle()
-
+chat_id=chat.id, user_id=user.id
 User.stop()
 print("User Stopped!")
 Bot.stop()
