@@ -27,7 +27,7 @@ CHAT = "#chatid*
 async def def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
     
-@Bot.on_message(filters.command("run") & filters.user(ADMINS))
+@Bot.on_message(filters.command("run") & filters.user(ADMINS) & filters.private)
 async def accept(bot, message):
     lol = await message.reply_text(
         text ='Proccesing'
